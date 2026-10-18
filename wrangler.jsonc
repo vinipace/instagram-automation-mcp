@@ -1,0 +1,50 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "instagram-automation-mcp",
+  "main": "src/worker.mts",
+  "compatibility_date": "2026-10-06",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "vars": {
+    "IG_ACCOUNT_ID": "",
+    "META_API_VERSION": "v26.0",
+    "LIVE_SENDS": "false",
+    "RETENTION_DAYS": "30",
+    "DLQ_NAME": "instagram-comment-replies-dlq",
+    "OPERATOR_NAME": "",
+    "OPERATOR_CONTACT_URL": ""
+  },
+  "queues": {
+    "producers": [
+      {
+        "binding": "REPLIES",
+        "queue": "instagram-comment-replies"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "instagram-comment-replies",
+        "max_batch_size": 10,
+        "max_batch_timeout": 5,
+        "max_retries": 5,
+        "max_concurrency": 1,
+        "dead_letter_queue": "instagram-comment-replies-dlq"
+      },
+      {
+        "queue": "instagram-comment-replies-dlq",
+        "max_batch_size": 10,
+        "max_retries": 3
+      }
+    ]
+  },
+  "triggers": {
+    "crons": [
+      "* * * * *"
+    ]
+  },
+  "observability": {
+    "enabled": true
+  }
+}

@@ -1,0 +1,27 @@
+# Generate separate random tokens (at least 32 characters). Never commit the real file.
+DATABASE_URL=
+# Required explicitly for integration tests; never fall back to the live database.
+TEST_DATABASE_URL=
+# Optional; this Worker uses Neon HTTP with the direct URL.
+DATABASE_URL_POOLED=
+MCP_ADMIN_TOKEN=
+MCP_READ_TOKEN=
+MCP_CONFIGURE_TOKEN=
+MCP_OPERATE_TOKEN=
+META_APP_SECRET=
+META_VERIFY_TOKEN=
+META_ACCESS_TOKEN=
+# 32 random bytes encoded as 64 hex characters; installed as a Worker secret.
+META_TOKEN_ENCRYPTION_KEY=
+# Meta's Instagram User ID, not a Business Suite asset or portfolio ID.
+IG_ACCOUNT_ID=
+# Choose a supported Graph API version for your Meta app, e.g. vNN.N.
+META_API_VERSION=
+LIVE_SENDS=false
+RETENTION_DAYS=30
+
+# Optional local/test client URL. Set your own HTTPS endpoint for verify:deployment.
+MCP_TEST_URL=
+# Required before /privacy can serve a published operator notice.
+OPERATOR_NAME=
+OPERATOR_CONTACT_URL=

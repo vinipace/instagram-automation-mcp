@@ -80,8 +80,8 @@ A primeira renovação aguarda no mínimo 24 horas da inicialização, porque a 
 ```sh
 npx wrangler login
 npx wrangler whoami
-npx wrangler queues create instagram-comment-replies
-npx wrangler queues create instagram-comment-replies-dlq
+npx wrangler queues create instagram-comment-replies --config wrangler.local.jsonc
+npx wrangler queues create instagram-comment-replies-dlq --config wrangler.local.jsonc
 ```
 
 Substitua os nomes se você os alterou. Crie o Worker inicialmente com envios desligados:

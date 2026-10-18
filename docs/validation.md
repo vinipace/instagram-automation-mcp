@@ -9,7 +9,7 @@ Revisão da versão 1.0.0 em 18/10/2026. Esta distribuição começa com histór
 - Configuração pessoal apenas em `.dev.vars` e `wrangler.local.jsonc`, ignorados pelo Git e gerados sem sobrescrever arquivos existentes.
 - Página de privacidade só publicada após configurar o próprio operador, contato HTTPS e retenção; parâmetros são escapados no HTML.
 - Licença MIT, instruções de instalação do zero, requisitos da Meta e instruções de MCP incluídos.
-- Instalação pelo lockfile, TypeScript, 49 testes e build Cloudflare aprovados. Uma cópia limpa deve reproduzir os mesmos resultados.
+- Instalação pelo lockfile usando o registry público e cache vazio, TypeScript, 49 testes e build Cloudflare aprovados. Uma cópia limpa deve reproduzir os mesmos resultados.
 - Auditoria `npm audit` sem vulnerabilidades conhecidas na versão validada. O tooling Cloudflare foi atualizado para Wrangler 4.151.1 e Miniflare 5.20261012.1-beta para corrigir a cadeia de dependência vulnerável encontrada na preparação.
 - CI executada sem credenciais de produção e com actions oficiais fixadas por commit; nenhuma implantação é feita pela CI.
 
